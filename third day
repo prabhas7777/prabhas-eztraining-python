@@ -1,0 +1,274 @@
+DAY 3
+Advance array concept in python
+List :
+L=[1,4,7.4,"sam"]
+L
+[1, 4, 7.4, 'sam']
+L[3]
+'sam'
+L[2:3]
+[7.4]
+L[0:]
+[1, 4, 7.4, 'sam']
+L[:3]
+[1, 4, 7.4]
+L[-1]
+'sam'
+
+append()- Add an element to the end of the list - I.append(4)
+extend() - Add all elements of a list to the another list - I extend((5,6))
+insert) - Insert an item at the defined index - I.insert (1, 22)-1-index 
+remove()- Removes an item from the list - I. remove (22) 
+pop()- Removes and returns an element at the given index - I. pop(3) 
+clear()- Removes all items from the list-l.clear 
+index() - Returns the index of the first matched item 
+count() - Returns the count of the number of items passed as an argument
+sort()- Sort items in a list in ascending order 
+reverse()-Reverse the order of items in the list 
+copy() - Returns a shallow copy of the list[11]
+
+
+L=[1,4,1,1,6,4,1,2]
+len(L)
+8
+L.count(1)
+4
+L.append(400)
+L
+[1, 4, 1, 1, 6, 4, 1, 2, 400]
+L.extend([100,200,300])
+L
+[1, 4, 1, 1, 6, 4, 1, 2, 400, 100, 200, 300]
+L.remove(1)
+L
+[4, 1, 1, 6, 4, 1, 2, 400, 100, 200, 300]
+L.pop(-2)
+200
+L.pop(9)
+300
+L.pop(8)
+100
+L
+[4, 1, 1, 6, 4, 1, 2, 400]
+L.sort()
+L
+[1, 1, 1, 2, 4, 4, 6, 400]
+L.reverse()
+L
+[400, 6, 4, 4, 2, 1, 1, 1]
+
+Programs
+1.Create a list with 10items print the elements one by one 
+L=[1,3,5,7]
+
+for i in range(len(L)):
+    print(L[i])
+
+#using membership operator
+for j in L:
+    print(j)
+
+2.create a list with 5float numbers find and display it sum and average of list
+l=[2.3,1.4,5.7,2.1,6.2,]
+s=2.3+1.4+5.7+2.1+6.2
+a=s/5
+print (a)
+print (s)
+
+3.After creating a list with 6 elements from the user extract only even numbers and print
+l=[1,2,3,4]
+
+for i in l:
+    if(i%2==0):
+        print(i)
+
+get list of no. s as input,return THR product if the product is less then 750
+else return the sum
+L=list(map(int,input("Enter the elements:").split(",")))
+prod=1
+sum=0
+for i in range (len (L)) :
+    prod=prod*L[i]
+    sum=sum+L [i]
+if(prod<750):
+     print ("Product of the given numbers:", prod)
+else:
+     print ("Sum of the given:", sum)
+
+Create a list using appending list 
+L=["hyd","vizag","chennai","vijayawada"]
+city=[]
+for n in L:
+    if "v" in n:
+        city.append(n)
+print(city)
+
+
+Create a list using tuple
+L1=[2**x for x in range(2,10)]
+print(L1)
+L2=[a for a in range (100,201,20)]
+print(L2)
+L3=[1,2,3,4,5,6]
+L4=[i for i in L3 if (i<5)]
+print(L4)
+
+Create a list using numbers
+numbers=[elements for elements in "Great Afternoon"]
+print(numbers)
+
+
+TUPLE:V
+ORDERED
+UNCHANGABLE
+Cant include items
+Can fetch using t [index]
+Methods - - count and index
+Count - elements no.of occurrences
+method finds the first occurrence of the specified value
+The index ( method rat an exception if the value is not found Index - returns element's index
+
+
+S={1,2,3}
+S1={1,2,3,4}
+S1.issuperset(S)
+True
+s={1,4,3,7}
+type(s)
+<class 'set'>
+ss={1,2,1,1,5,3,2}
+ss
+{1, 2, 3, 5}
+s.add(55)
+s
+{1, 3, 4, 7, 55}
+s.update([77,88])
+s
+{1, 3, 4, 7, 77, 55, 88}
+s1={1,2,3,4,5,10}
+s2={4,1,9,2,10}
+s1^s2
+{3, 5, 9}
+print(s1.symmetric_difference(s2))
+{3, 5, 9}
+#SET
+*Dupicates are not allowed
+*Unordered
+*No index
+s={10,20,30,40,20,30}
+s
+{40, 10, 20, 30}
+-------------------------------------------------------
+#set methods
+add():Adds an element to the set-----s.add(2)
+update():Adds more than one element----s.update({9,99})
+remove() and discard():Both are same but remove return error if the element is not in the list---s.discard(2) and s.remove(2)
+Union():returns the union of 2 sets----s1|s2 or s1.union(s2)
+Intersection:returns the intersection of 2 sets----s1&s2 or s1.intersection(s2)
+Difference:returns the diff of 2 sets---s1-s2 or s1.differnce(s2)
+issuperset():checks whether all the elements in s1 present in s2
+symmetric_difference():returns the elements which are not common in 2 sets---s1.symmetric_difference(s2)
+s.add(50)
+s
+{40, 10, 50, 20, 30}
+s.update({60,70})
+s
+{70, 40, 10, 50, 20, 60, 30}
+s.discard(70)
+s
+{40, 10, 50, 20, 60, 30}
+s.remove(70)
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    s.remove(70)
+KeyError: 70
+s.remove(60)
+s
+{40, 10, 50, 20, 30}
+s1={1,2,3,4,5}
+s2={2,4,6}
+s1.union(s2)
+{1, 2, 3, 4, 5, 6}
+s1.intersection(s2)
+{2, 4}
+s1.difference(s2)
+{1, 3, 5}
+s1-s2
+{1, 3, 5}
+s1.issuperset(s2)
+False
+s1.symmetric_difference(s2)
+{1, 3, 5, 6}
+-------------------------------------------------------------
+#TUPLE
+*Ordered
+*Unchangeble
+*Can't include items
+*Duplication is allowed
+-------------------------------------
+#Tuple initialization
+T=1,2,3
+or
+T=(1,2,3)
+--------------------------------------
+#Tuple methods
+count():returns the count of a particular element--T.count(9)
+index():returns the element's position---T.index(2)
+T=(10,20,30,40)
+T
+(10, 20, 30, 40)
+T.count(10)
+1
+T.index(20)
+1
+--------------------------------------
+#list to tuple
+l=[10,20,30,40,50]
+T=tuple(l)
+T
+(10, 20, 30, 40, 50)
+--------------------------------------
+#nested tuple
+t1=('keep','working')
+t2=(10,20)
+t3=(t1,t2)
+t3
+(('keep', 'working'), (10, 20))
+-------------------------------------------------------------
+-------------------------------------------------------------
+
+Dictionary
+Dictionary contains elements with 2 units keys and values keys must be unique 
+
+type(d)
+<class 'dict'>
+d.keys()
+dict_keys([1, 2])
+d.values()
+dict_values(['one', 'two'])
+d.dictitems(['one','two'])
+d.items()
+dict_items([(1,'one'),(2,'two')])
+
+- [ ] Dictionary is with keys
+- [ ] Ex:d={‘syl’:’techno’,’charm’:’maize’}
+- [ ] type(d)
+- [ ] d.keys()
+- [ ] I[I]
+- [ ] 20
+- [ ] >>>d[’syl’]
+- [ ] ‘techno’
+- [ ] >>>d.get('syl')
+can create dictionaries from iterables like list,tuple,range 
+d.fromkeys(iterable,value)..value is optional
+l=['hi'.'hello']
+>>> dict.fromkeys(l)
+{'hi':none,'hello':none}
+>>>dict.fromkeys(l,50)
+{'hi':50,'hello':50}
+{}.fromkeys(l,100)
+s=dict.fromkeys(l,100)
+>>>s
+{'hi':100,'hello':100}
+
+
